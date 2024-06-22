@@ -34,10 +34,14 @@ function Friend({friend}){
         </div>
       </div>
       <div className="friend__button">
-        <button>Select</button>
+        <Button>Select</Button>
       </div>
     </div>
   )
+}
+
+function Button({children}){
+  return <button>{children}</button>
 }
 
 function Friends({data}){
@@ -53,10 +57,60 @@ function App() {
     <div className="App">
       <div className="sidebar">
         <Friends data={initialFriends} />
+        <FormAddFriend />
+        <Button>Add friend</Button>
+      </div>
+      <div className="content">
+        <FormBillSplit />
       </div>
       
     </div>
   );
 }
+
+function FormAddFriend(){
+  return (
+    <form >
+      <div>
+        <label> 🧑‍🤝‍🧑 Friend Name</label>
+        <input type="text" />
+      </div>
+      <div>
+        <label> 🖼️ Image URL</label>
+        <input type="text" />
+      </div>
+      <Button>Add</Button>
+    </form>
+  )
+}
+
+
+function FormBillSplit(){
+  return (
+    <form >
+      <div>
+        <label> 💰 Bill value</label>
+        <input type="text" />
+      </div>
+      <div>
+        <label> 🏋️‍♀️ Your expense</label>
+        <input type="text" />
+      </div>
+      <div>
+        <label> 🙆‍♀️ X`s` expense</label>
+        <input type="text" />
+      </div>
+      <div>
+        <label> 💁 Who is paying the bill</label>
+        <select>
+          <option value="user">Your</option>
+          <option value="friend">X</option>
+        </select>
+      </div>
+      <Button>Split bill</Button>
+    </form>
+  )
+}
+
 
 export default App;
