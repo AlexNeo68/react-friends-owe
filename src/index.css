@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+}
+.friends {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.friend {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  
+}
+.friend__avatar {
+  width: 70px;
+  height: 70px;
+}
+img {
+  object-fit: cover;
+  max-width: 100%;
+}
