@@ -30,10 +30,16 @@ code {
 }
 
 .friend {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
   gap: .85rem;
-  
+  padding: 1rem;
+  border-radius: .75rem;
+}
+.friend.selected {
+  background-color: antiquewhite;
+  border: gray;
 }
 .friend__avatar {
   width: 70px;
