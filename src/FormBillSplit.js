@@ -1,15 +1,20 @@
 import { useState } from "react";
 import { Button } from "./Button";
 
-export function FormBillSplit({selectedFriend}) {
+export function FormBillSplit({selectedFriend, onSplitBill}) {
   const [bill, setBill] = useState(0)
   const [yourExpense, setYourExpense] = useState(0)
   const [who, setWho] = useState('user')
 
   const friendsExpense = bill&&bill-yourExpense
 
+  function handleSubmit(e){
+    e.preventDefault()
+    onSplitBill(who==='user' ? -friendsExpense : friendsExpense)
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h3>Owe to {selectedFriend.name}</h3>
       <div>
         <label> 💰 Bill value</label>
